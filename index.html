@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>شكل الحرف — حروفي ٣</title>
+  <meta name="description" content="لعبة تعليمية للأطفال من 3 إلى 6 سنوات: بص على الصورة، شوف مكان الحرف الناقص في الكلمة، واختار شكله الصح — في أول الكلمة ولا وسطها ولا آخرها." />
+  <meta name="theme-color" content="#6d4aff" />
+  <link rel="icon" href="./icons/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./icons/icon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="شكل الحرف" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app" class="app">
+
+    <header class="hud">
+      <div class="hud-chip" aria-live="polite">
+        <span class="hud-label">النقاط</span>
+        <b id="score">0</b>
+      </div>
+      <div class="hud-chip hud-best">
+        <span class="hud-label">أفضل نتيجة</span>
+        <b id="best">0</b>
+      </div>
+      <button id="soundBtn" class="icon-btn" type="button" aria-label="إيقاف الصوت">🔊</button>
+    </header>
+
+    <main class="stage">
+      <div class="sky" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="cloud cloud-a"></div>
+        <div class="cloud cloud-b"></div>
+        <div class="cloud cloud-c"></div>
+      </div>
+
+      <p class="prompt" id="prompt" aria-live="polite">شوف مكان الحرف الناقص — واختار شكله الصح</p>
+
+      <div class="picture-card" id="pictureCard">
+        <span class="picture-emoji" id="pictureEmoji" aria-hidden="true">🍬</span>
+        <span class="check-badge" id="checkBadge" aria-hidden="true">✓</span>
+        <button class="speak-btn" id="speakBtn" type="button" aria-label="اسمع الكلمة تاني">🔈</button>
+      </div>
+
+      <div class="word-panel">
+        <div class="word-line" id="wordLine">
+          <span class="word-text" id="wordText">سُكَّر</span>
+          <span class="word-gap" id="wordGap" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="hint" id="hint">
+        <span class="hint-label">الحرف الناقص</span>
+        <b class="hint-letter" id="hintLetter">ك</b>
+        <span class="hint-name" id="hintName">كاف</span>
+      </div>
+
+      <div class="shapes" id="shapes" role="group" aria-label="اختار شكل الحرف المناسب لمكانه في الكلمة"></div>
+    </main>
+
+    <div class="overlay" id="startOverlay">
+      <div class="card">
+        <div class="card-emoji" aria-hidden="true">✏️</div>
+        <h1>شكل الحرف</h1>
+        <p class="card-sub">حروفي ٣</p>
+        <p class="card-text">بص على الصورة، اسمع الكلمة، وشوف الحرف الناقص. بعدين اختار شكله الصح: في أول الكلمة، ولا وسطها، ولا آخرها.</p>
+        <p class="card-note">🎯 الحرف بيغيّر شكله حسب مكانه في الكلمة</p>
+        <button class="big-btn" id="playBtn" type="button">ابدأ اللعب</button>
+        <p class="card-note">للأعمار 3–6 · يشتغل بدون إنترنت بعد أول فتح</p>
+      </div>
+    </div>
+
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+  </div>
+
+  <script src="./game.js"></script>
+</body>
+</html>
